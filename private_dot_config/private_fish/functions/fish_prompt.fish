@@ -19,7 +19,7 @@ function fish_prompt
 
   if [ (_git_branch_name) ]
 
-    if test (_git_branch_name) = 'master'
+    if contains (_git_branch_name) 'master' 'main' 'mainline'
       set -l git_branch (_git_branch_name)
       set git_info "$normal ($red$git_branch$normal)"
     else
